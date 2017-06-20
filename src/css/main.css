@@ -26,6 +26,75 @@ body {
     padding: 0px;
 }
 
+#loading-overlay {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    z-index: 200;
+    background: rgb(66, 70, 77)
+}
+
+
+/*ANIMATIONS*/
+
+.fadeout {
+    animation: fadeOut 2s forwards;
+    ;
+    -moz-animation: fadeOut 2s forwards;
+    ;
+    /* Firefox */
+    -webkit-animation: fadeOut 2s forwards;
+    ;
+    /* Safari and Chrome */
+    -o-animation: fadeOut 2s forwards;
+    ;
+    /* Opera */
+}
+
+@-moz-keyframes fadeOut {
+    0% {
+        opacity: 1;
+        visibility: visible;
+    }
+    100% {
+        opacity: 0;
+        visibility: hidden;
+    }
+}
+
+@-webkit-keyframes fadeOut {
+    0% {
+        opacity: 1;
+        visibility: visible;
+    }
+    100% {
+        opacity: 0;
+        visibility: hidden;
+    }
+}
+
+@-ms-keyframes fadeOut {
+    0% {
+        opacity: 1;
+        visibility: visible;
+    }
+    100% {
+        opacity: 0;
+        visibility: hidden;
+    }
+}
+
+@keyframes fadeOut {
+    0% {
+        opacity: 1;
+        visibility: visible;
+    }
+    100% {
+        opacity: 0;
+        visibility: hidden;
+    }
+}
+
 
 /*LINKS*/
 
@@ -128,7 +197,7 @@ nav>a.active:not(.mini-logo-nav) {
 /*BOTTOM SPACER*/
 
 #bottom-spacer {
-    height: 124px;
+    height: 0px;
 }
 
 
@@ -277,9 +346,6 @@ nav>a.active:not(.mini-logo-nav) {
     #contents-top-pad {
         height: 8vw;
     }
-    #bottom-spacer {
-        height: 20vw;
-    }
     #navbar {
         background: white;
     }
@@ -297,17 +363,22 @@ nav>a.active:not(.mini-logo-nav) {
         height: 3.5em;
         transform: translate(0, -1em);
     }
+    #bottom-spacer {
+        height: 20vw;
+    }
 }
 
-@media (max-width: 385px) {
+
+/*@media (max-width: 359px) {
     #center-container {
         display: none;
     }
     body::before {
         content: 'Please Widen Window to View YallaPunk Website!';
         font-size: 18vw;
+        color: white;
     }
-}
+}*/
 
 
 /**********************************
@@ -321,6 +392,9 @@ nav>a.active:not(.mini-logo-nav) {
     #big-logo {
         margin-bottom: 25px;
         margin-top: 40px;
+    }
+    #big-logo>img {
+        position: relative;
     }
     #front-text {
         margin-top: 0px;
@@ -362,5 +436,37 @@ nav>a.active:not(.mini-logo-nav) {
     }
     .social .glyph>i {
         font-size: 1.5em;
+    }
+}
+
+
+/********************************
+* RESPONSIVE STYLING - IE SUCKS *
+*********************************/
+
+@media all and (-ms-high-contrast: none),
+(-ms-high-contrast: active) {
+    #big-logo>#underline {
+        display: none;
+    }
+    #big-logo {
+        position: relative;
+        text-align: center;
+        display: block;
+        margin: auto;
+    }
+    #big-logo>img {
+        position: relative;
+        margin: auto;
+    }
+    #contents {
+        display: inline;
+    }
+    #front-text {
+        margin-top: 40px;
+    }
+    .social {
+        margin: 0;
+        justify-content: center;
     }
 }

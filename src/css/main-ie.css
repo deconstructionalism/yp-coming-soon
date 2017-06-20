@@ -1,0 +1,28 @@
+    #big-logo>#underline {
+        display: none;
+    }
+    
+    #big-logo {
+        position: relative;
+        text-align: center;
+        display: block;
+        margin: auto;
+    }
+    
+    #big-logo>img {
+        position: relative;
+        margin: auto;
+    }
+    
+    #contents {
+        display: inline;
+    }
+    
+    #front-text {
+        margin-top: 20px;
+    }
+    
+    .social {
+        margin: 0;
+        justify-content: center;
+    }
