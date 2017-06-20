@@ -1,0 +1,366 @@
+/******************
+* GENERAL STYLING *
+*******************/
+
+
+/*PAGE*/
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+html {
+    box-sizing: border-box;
+}
+
+body {
+    background-image: linear-gradient(-180deg, rgba(0, 0, 0, 0.13) 0%, rgba(0, 0, 0, 0.00) 100%);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    font-family: 'Asap', sans-serif;
+    font-size: 17px;
+    margin: 0px;
+    padding: 0px;
+}
+
+
+/*LINKS*/
+
+a:link {
+    color: inherit;
+    text-decoration: none;
+}
+
+a:visited {
+    color: inherit;
+}
+
+a:link.underlined-link {
+    font-weight: bold;
+    display: inline-block;
+    line-height: 0.3em;
+    white-space: pre;
+    color: inherit;
+}
+
+a:visited.underlined-link.blue,
+a:link.underlined-link.blue {
+    border-bottom: 0.5em solid rgb(0, 97, 232);
+}
+
+a:link.underlined-link.teal,
+a:visited.underlined-link.teal {
+    border-bottom: 0.5em solid rgb(0, 206, 177);
+}
+
+a:visited.underlined-link.teal {
+    color: inherit;
+    border-bottom-color: rgb(0, 206, 177);
+}
+
+
+/*CENTERED CONTAINER*/
+
+#center-container {
+    width: 800px;
+    margin: auto;
+    padding-top: 60px;
+    max-width: 100%;
+}
+
+
+/*NAVBAR*/
+
+#navbar {
+    visibility: hidden;
+    justify-content: flex-end;
+    display: flex;
+    flex-flow: row;
+    width: 100%;
+}
+
+nav {
+    background: white;
+}
+
+nav>a {
+    display: inline-block;
+    flex: 1;
+    padding: 2px 10px;
+    font-weight: 700;
+}
+
+nav>a.mini-logo-nav {
+    width: 40px;
+    display: none;
+}
+
+nav>a.mini-logo-nav>img {
+    height: 50px;
+    position: absolute;
+    transform: translateY(-50%);
+}
+
+nav>a:hover:not(.mini-logo-nav),
+nav>a.active:not(.mini-logo-nav) {
+    border-bottom: 0.45em solid rgb(0, 206, 177);
+    display: inline-block;
+    line-height: 0.2em;
+}
+
+
+/*CONTENTS*/
+
+#contents {
+    display: flex;
+    flex-flow: row;
+    width: 100%;
+}
+
+#contents-top-pad {
+    height: 40px;
+}
+
+
+/*BOTTOM SPACER*/
+
+#bottom-spacer {
+    height: 124px;
+}
+
+
+/*********************
+* INDEX.HTML STYLING *
+**********************/
+
+
+/*FRONT PAGE OVERLAY*/
+
+#overlay {
+    z-index: -1;
+    background: rgba(66, 70, 77, 0.48);
+    position: fixed;
+    float: left;
+    vertical-align: top;
+    left: 0px;
+    top: 0px;
+    width: 100vw;
+    height: 100vh;
+}
+
+
+/*BIG LOGO*/
+
+#big-logo {
+    display: flex;
+    justify-content: center;
+    margin-top: 55px;
+    flex: 1;
+    height: 169.23px;
+}
+
+#big-logo>#underline {
+    background: rgb(0, 97, 232);
+    position: absolute;
+    width: 320px;
+    height: 25px;
+    margin-top: 118px;
+    z-index: 9;
+}
+
+#big-logo>img {
+    position: absolute;
+    width: 300px;
+    z-index: 10;
+    -webkit-filter: drop-shadow( 0px 3px 2px black);
+    filter: drop-shadow( 0px 2px 0px black);
+}
+
+#front-text {
+    flex: 1;
+    margin-top: 150px;
+}
+
+#front-text>p {
+    margin-left: 95.2px;
+    margin-right: 1.5em;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    padding-bottom: 1em;
+    color: white;
+    text-align: left;
+    font-size: 0.8em;
+    line-height: 23px;
+    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.70);
+}
+
+#front-text>p>span.title {
+    font-size: 2.5em;
+}
+
+#front-text>p>span.drop-cap {
+    font-size: 1.3em;
+    font-weight: 538.45;
+}
+
+
+/*SOCIAL*/
+
+.social {
+    margin-left: 95.2px;
+    display: flex;
+    flex-flow: row;
+}
+
+.social .glyph {
+    border-radius: 20px;
+    font-size: 1.4em;
+    margin: 0px 10px 10px 0px;
+    width: 35px;
+    height: 35px;
+    display: table;
+    text-align: center;
+}
+
+.social .glyph>i {
+    display: table-cell;
+    vertical-align: middle;
+    color: white;
+}
+
+.glyph.facebook {
+    background: #304f85;
+}
+
+.glyph.twitter {
+    background: #15a7ff;
+}
+
+.glyph.instagram {
+    background: #78c4ff;
+}
+
+
+/*******************************
+* RESPONSIVE STYLING - GENERAL *
+********************************/
+
+
+/*NARROW DESKTOP LAYOUT*/
+
+@media (max-width: 900px) {
+    #contents {
+        flex-flow: column;
+    }
+    #center-container {
+        width: 538.45px;
+    }
+    #navbar {
+        justify-content: center;
+    }
+}
+
+
+/*MOBILE LAYOUT*/
+
+@media (max-width: 610px) {
+    body {
+        font-size: 3.5vw;
+    }
+    #center-container {
+        width: 100vw;
+        padding-top: 0px;
+    }
+    #contents-top-pad {
+        height: 8vw;
+    }
+    #bottom-spacer {
+        height: 20vw;
+    }
+    #navbar {
+        background: white;
+    }
+    nav>a {
+        padding-left: 1.5vw;
+        padding-right: 1.5vw;
+        padding-top: 2vw;
+        padding-bottom: 2vw;
+        font-size: .9em;
+    }
+    nav>a.mini-logo-nav {
+        width: 7vw;
+    }
+    nav>a.mini-logo-nav>img {
+        height: 3.5em;
+        transform: translate(0, -1em);
+    }
+}
+
+@media (max-width: 385px) {
+    #center-container {
+        display: none;
+    }
+    body::before {
+        content: 'Please Widen Window to View YallaPunk Website!';
+        font-size: 18vw;
+    }
+}
+
+
+/**********************************
+* RESPONSIVE STYLING - INDEX.HTML *
+***********************************/
+
+@media (max-width: 900px) {
+    #front-text>p {
+        margin: 0px;
+    }
+    #big-logo {
+        margin-bottom: 25px;
+        margin-top: 40px;
+    }
+    #front-text {
+        margin-top: 0px;
+    }
+    .social {
+        margin: 0;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 610px) {
+    #big-logo {
+        height: 39.48vw;
+        margin-top: 8vw;
+        margin-bottom: 8vw;
+    }
+    #big-logo>img {
+        width: 70vw;
+    }
+    #big-logo>#underline {
+        width: 74vw;
+        height: 6vw;
+        margin-top: 27.5vw;
+    }
+    #front-text>p {
+        font-size: 1.2em;
+        line-height: 1.6em;
+        margin-left: 10vw;
+        margin-right: 10vw;
+    }
+    .social .glyph {
+        width: 10vw;
+        height: 10vw;
+        border-radius: 30vw;
+        font-size: 1.4em;
+        margin: 0px 10px 10px 0px;
+        display: table;
+        text-align: center;
+    }
+    .social .glyph>i {
+        font-size: 1.5em;
+    }
+}
