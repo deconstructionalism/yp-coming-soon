@@ -2,7 +2,7 @@
 var backgrounds = [
     'images/giant-kitty-bg.jpg',
     'images/philly-skyline-bg.jpg',
-    'images/philly-map-bg.jpg',
+    'images/philly-street-bg.jpg',
 ];
 
 // preload background images

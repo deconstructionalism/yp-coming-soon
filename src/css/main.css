@@ -361,6 +361,15 @@ nav>a {
 ********************************/
 
 
+/*SHORT WINDOW LAYOUT*/
+
+@media (max-height: 596px) {
+    #bottom-spacer {
+        height: 60px;
+    }
+}
+
+
 /*NARROW DESKTOP LAYOUT*/
 
 @media (max-width: 900px) {
@@ -377,6 +386,12 @@ nav>a {
 
 
 /*MOBILE LAYOUT*/
+
+@media (max-height: 360px) {
+    #center-container {
+        padding-top: 5vw;
+    }
+}
 
 @media (max-width: 610px) {
     body {
@@ -458,16 +473,13 @@ nav>a {
         margin-right: 10vw;
     }
     .social .glyph {
-        width: 10vw;
-        height: 10vw;
+        width: 14vw;
+        height: 14vw;
         border-radius: 30vw;
-        font-size: 1.4em;
-        margin: 0px 10px 10px 0px;
-        display: table;
-        text-align: center;
+        margin: 0px 4vw 4vw 0px;
     }
     .social .glyph>i {
-        font-size: 1.5em;
+        font-size: 2em;
     }
 }
 
