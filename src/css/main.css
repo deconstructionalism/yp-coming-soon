@@ -20,7 +20,7 @@ body {
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
-    background-position: center center;
+    background-position: center top;
     font-family: 'Asap', sans-serif;
     font-size: 17px;
     margin: 0px;
@@ -28,29 +28,88 @@ body {
     transition: background 1s linear;
 }
 
+
+/*LOADING OVERLAY*/
+
 #loading-overlay {
     position: fixed;
     width: 100vw;
     height: 100vh;
     z-index: 200;
-    background: rgb(66, 70, 77)
+    background: rgb(66, 70, 77);
+    text-align: center;
 }
 
+#loading-overlay span {
+    vertical-align: middle;
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    margin: 50px auto;
+    background: white;
+    border-radius: 50px;
+    margin-top: 50vh;
+}
 
-/*ANIMATIONS*/
+.dots {
+    animation: loader 0.9s infinite alternate;
+    -webkit-animation: loader 0.9s infinite alternate;
+    -moz-animation: loader 0.9s infinite alternate;
+    -o-animation: loader 0.9s infinite alternate;
+}
+
+.dots-fadeout {
+    animation: fadeOut 0.7s forwards, loader 0.9s infinite alternate;
+    -moz-animation: fadeOut 0.7s forwards, loader 0.9s infinite alternate;
+    -webkit-animation: fadeOut 0.7s forwards, loader 0.9s infinite alternate;
+    -o-animation: fadeOut 0.7s forwards, loader 0.9s infinite alternate;
+}
+
+#loading-overlay span:nth-of-type(2) {
+    -webkit-animation-delay: 0.3s;
+    -moz-animation-delay: 0.3s;
+}
+
+#loading-overlay span:nth-of-type(3) {
+    -webkit-animation-delay: 0.6s;
+    -moz-animation-delay: 0.6s;
+}
+
+@-webkit-keyframes loader {
+    0% {
+        width: 10px;
+        height: 10px;
+        opacity: 0.9;
+        -webkit-transform: translateY(0);
+    }
+    100% {
+        width: 24px;
+        height: 24px;
+        opacity: 0.1;
+        -webkit-transform: translateY(-21px);
+    }
+}
+
+@-moz-keyframes loader {
+    0% {
+        width: 10px;
+        height: 10px;
+        opacity: 0.9;
+        -moz-transform: translateY(0);
+    }
+    100% {
+        width: 24px;
+        height: 24px;
+        opacity: 0.1;
+        -moz-transform: translateY(-21px);
+    }
+}
 
 .fadeout {
     animation: fadeOut 2s forwards;
-    ;
     -moz-animation: fadeOut 2s forwards;
-    ;
-    /* Firefox */
     -webkit-animation: fadeOut 2s forwards;
-    ;
-    /* Safari and Chrome */
     -o-animation: fadeOut 2s forwards;
-    ;
-    /* Opera */
 }
 
 @-moz-keyframes fadeOut {
@@ -215,6 +274,7 @@ nav>a {
 }
 
 #big-logo>#underline {
+    display: inline;
     background: rgb(0, 97, 232);
     position: absolute;
     width: 320px;
@@ -249,7 +309,7 @@ nav>a {
     text-shadow: 0 2px 5px rgba(0, 0, 0, 0.70);
 }
 
-#front-text>p>span.title {
+#front-text>p.title>span {
     font-size: 2.2em;
 }
 
@@ -359,6 +419,7 @@ nav>a {
 @media (max-width: 900px) {
     #front-text>p {
         margin: 0px;
+        text-align: justify;
     }
     #big-logo {
         margin-bottom: 25px;
@@ -415,18 +476,19 @@ nav>a {
 * RESPONSIVE STYLING - IE SUCKS *
 *********************************/
 
-@media all and (-ms-high-contrast: none),
+@media (-ms-high-contrast: none),
 (-ms-high-contrast: active) {
     #big-logo>#underline {
-        display: none;
+        position: absolute;
     }
     #big-logo {
-        position: relative;
-        text-align: center;
         display: block;
+        width: 300px;
+        margin: 0 auto;
+        margin-top: 40px;
     }
     #big-logo>img {
-        position: relative;
+        position: absolute;
         margin: auto;
     }
     #contents {
@@ -441,5 +503,29 @@ nav>a {
     .social {
         margin: 0;
         justify-content: center;
+    }
+    #loading-overlay span:first-child {
+        background: transparent;
+        width: 100vw;
+    }
+    #loading-overlay span:first-child:after {
+        color: white;
+        content: 'LOADING';
+        letter-spacing: 1em;
+        font-size: 1.7em;
+    }
+    #loading-overlay span:not(:first-child) {
+        display: none;
+    }
+}
+
+@media(max-width: 610px) and (-ms-high-contrast: none),
+(-ms-high-contrast: active) {
+    #big-logo {
+        width: 70vw;
+        margin-top: 8vw;
+    }
+    #front-text {
+        margin-top: 8vw;
     }
 }

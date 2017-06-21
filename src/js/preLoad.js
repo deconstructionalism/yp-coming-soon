@@ -1,26 +1,62 @@
+// background image paths to be displayed
+var backgrounds = [
+    'images/giant-kitty-bg.jpg',
+    'images/philly-skyline-bg.jpg',
+    'images/philly-map-bg.jpg',
+];
+
+// preload background images
+(function() {
+    backgrounds.map(function(source) {
+        var img = new Image();
+        img.src = source;
+    });
+})();
+
+// fade out loading overlay after resources are loaded and start cycling backgrounds
 window.onload = function() {
-    document.querySelector('#loading-overlay').classList.add('fadeout')
+    var dots = document.querySelectorAll('#loading-overlay span')
+    for (var i = 0; i < dots.length; i++) {
+        dots[i].classList.add('dots-fadeout')
+    }
+    // document.querySelectorAll('#loading-overlay span').forEach(function(dot) {
+    //     dot.classList.add('dots-fadeout')
+    // })
+    setTimeout(function() {
+        document.querySelector('#loading-overlay').classList.add('fadeout');
+    }, 1200)
+    cycleBgs();
 };
 
-
-(function() {
-
-    var backgrounds = [
-        'images/giant-kitty-bg.jpg',
-        'images/haram-bg.jpg',
-        'images/ravi-shavi-bg.jpg'
-    ];
+// cycle background images
+var cycleBgs = function() {
 
     var bodyEl = document.querySelector('body');
-    bodyEl.style.backgroundImage = 'url(' + backgrounds[0] + ')';
+    var counter = 0;
+    var numBgs = backgrounds.length;
 
-    var counter = 1;
-    var range = backgrounds.length;
+    // set background image
+    var setBg = function(bgSource) {
+        bodyEl.style.backgroundImage = 'url(' + bgSource + ')';
+    }
 
+    // initialize background based on number of images
+    switch (numBgs) {
+        case 0:
+            return;
+        case 1:
+            setBg(backgrounds[0]);
+            return;
+        default:
+            setBg(backgrounds[0]);
+            counter += 1;
+    }
+
+    // cycle through background images
     setInterval(function() {
-        counter = counter === range ? 0 : counter;
+        counter = counter === numBgs ? 0 : counter;
         var bgImg = backgrounds[counter];
-        bodyEl.style.backgroundImage = 'url(' + bgImg + ')';
+        setBg(bgImg);
         counter += 1;
     }, 3000);
-})();
+}

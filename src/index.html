@@ -8,37 +8,78 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>YallaPunk Festival</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>YallaPunk Festival</title>
+
+    <!--styles-->
     <link rel="stylesheet" type="text/css" href="css/main.css">
+
+    <!--fonts and glyphs-->
     <link rel="stylesheet" href="css/font-awesome.css">
     <link href="https://fonts.googleapis.com/css?family=Asap" rel="stylesheet">
+
+    <!--favicon-->
+    <link rel="apple-touch-icon" sizes="57x57" href="images/favicon/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="images/favicon/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="images/favicon/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="images/favicon/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="images/favicon/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="images/favicon/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="images/favicon/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="images/favicon/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="images/favicon/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="images/favicon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="images/favicon/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon/favicon-16x16.png">
+    <link rel="manifest" href="images/favicon/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff ">
+    <meta name="msapplication-TileImage" content="images/favicon/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff ">
 </head>
 
 <body>
-    <div id="loading-overlay"></div>
+    <!--loading overlay-->
+    <div id="loading-overlay">
+        <span class="dots"></span>
+        <span class="dots"></span>
+        <span class="dots"></span>
+    </div>
+
+    <!--transparent overlay-->
     <div id="overlay"></div>
+
+    <!--main content-->
     <div id="center-container">
+
+        <!--navbar-->
         <div id="date-and-time">
             <nav>
                 <a>Sep 1 - Sep 3 2017 &mdash; Philadelphia PA</a>
             </nav>
         </div>
+
+        <!--main contents-->
         <div id="contents">
             <div id="big-logo">
-                <img style="fill: white" src="images/logo-white.svg"></img>
+                <img style="fill: white" src="images/logo-white.svg">
                 <div id="underline"></div>
             </div>
+
+            <!--main text-->
             <div id="front-text">
-                <p>
-                    <span class="title">COMING SOON</span>
+                <p class="title">
+                    <span>COMING SOON</span>
                 </p>
                 <p>
                     <span class="drop-cap">YallaPunk</span> is a direct response to negative depictions of populations of middle eastern descent in mainstream media. This event is meant to highlight creative accomplishments of Arabs and Persians and serve
                     as a safe space forum for discourse about social issues. The idea is to celebrate music, art, film and other cultural artifacts created by this particular population in an intersectional and inclusive space free from sexism, homophobia
                     and bigotry.
                 </p>
+
+                <!--social media glyphs-->
                 <div class="social">
                     <a target="_blank" href="https://www.facebook.com/yallapunk/">
                         <div class="glyph facebook">
@@ -50,30 +91,25 @@
                             <i class="fa fa-twitter"></i>
                         </div>
                     </a>
-                    <a target="_blank" href="http://instagram.com">
+                    <a target="_blank" href="https://www.instagram.com/yallapunk/">
                         <div class="glyph instagram">
                             <i class="fa fa-instagram"></i>
                         </div>
                     </a>
                 </div>
-                <!--<p>
-                    In 2003, filmmaker James Spooner released the movie “Afro-punk,” a documentary about African Americans within the punk rock and Do-It-Yourself music community. The film later inspired a music and arts festival surrounding the same concept through an annual
-                    gathering. YallaPunk aims to be an annual gathering of Arab and Persian Americans who identify with the punk rock and DIY music community.
-                </p>
-                <p>
-                    The festival will include music performances, speaker and discussion panels, a MENA merch marketplace and more.
-                </p>-->
-
             </div>
         </div>
+
+        <!--spacer for contents to scroll past bottom-->
         <div id="bottom-spacer"></div>
     </div>
 
     <!--[if lt IE 7]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
-    <script src="js/preLoad.js"></script>
 
+    <!--preload backgrounds-->
+    <script src="js/preLoad.js"></script>
 </body>
 
 </html>
