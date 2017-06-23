@@ -1,0 +1,25 @@
+{
+    "remotePath": "./www/yallapunk.com/",
+    "host": "68.169.63.119",
+    "username": "arjun",
+    "password": "p8wNW*Qr3q+x",
+    "port": 21,
+    "secure": false,
+    "protocol": "ftp",
+    "uploadOnSave": false,
+    "passive": false,
+    "debug": false,
+    "privateKeyPath": null,
+    "passphrase": null,
+    "ignore": [
+        "\\.vscode",
+        "\\.git",
+        "\\.DS_Store",
+        "\\.md"
+    ],
+    "generatedFiles": {
+        "uploadOnSave": false,
+        "extensionsToInclude": [],
+        "path": ""
+    }
+}
