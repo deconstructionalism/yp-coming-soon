@@ -29,9 +29,69 @@
     <link rel="shortcut icon" href="images/favicon/favicon.ico">
     <meta name="msapplication-config" content="images/favicon/browserconfig.xml">
     <meta name="theme-color" content="#0061e8">
+    <style>
+        #settings {
+            background: white;
+            width: 100vw;
+            position: fixed;
+            top: 0;
+            left: 0;
+            padding: 0.7em;
+            text-align: center;
+            z-index: 12;
+        }
+        
+        #settings>input {
+            width: 4em;
+            margin-right: 2em;
+            text-align: center;
+        }
+        
+        input[type=number]::-webkit-inner-spin-button,
+        input[type=number]::-webkit-outer-spin-button {
+            opacity: 1;
+        }
+    </style>
+    <script>
+        var bgOpacity, shadowDistance;
+        var overlay, text;
+        window.addEventListener("load", function(event) {
+            bgOpacity = document.querySelector('#bg-opacity');
+            overlay = document.querySelector('#overlay');
+            var startingOpacity = window.getComputedStyle(overlay).getPropertyValue('opacity')
+            bgOpacity.value = 1 - startingOpacity;
+
+            shadowDistance = document.querySelector('#shadow-distance');
+            text = document.querySelectorAll('#front-text>p');
+            var startingShadow = window.getComputedStyle(text[0])
+                .getPropertyValue('text-shadow')
+                .split(' ')[5]
+                .split('px')[0]
+            shadowDistance.value = startingShadow
+        })
+
+        function handleBgO() {
+            overlay.style.opacity = 1 - bgOpacity.value;
+        }
+
+        function handleShD() {
+            var styleStr = "rgb(0, 0, 0) 0px 0px " + shadowDistance.value + "px";
+            console.log(styleStr)
+            for (var i = 0; i < text.length; i++) {
+                text[i].style.textShadow = styleStr;
+            }
+
+        }
+    </script>
 </head>
 
 <body>
+    <div id='settings'>
+        <span class="name">bg opacity</span>
+        <input type="number" min="0.00" max="1.00" step="0.01" id="bg-opacity" onchange="handleBgO()">
+        <span class="name">text shadow</span>
+        <input type="number" min="0.0" step="0.1" id="shadow-distance" onchange="handleShD()">
+    </div>
     <!--loading overlay-->
     <div id="loading-overlay">
         <span class="dots"></span>
@@ -44,7 +104,6 @@
 
     <!--main content-->
     <div id="center-container">
-
         <!--navbar-->
         <div id="date-and-time">
             <nav>
@@ -71,7 +130,7 @@
                 </p>
 
                 <!--social media glyphs-->
-                <div class="social" role="social media links">
+                <div class="social">
                     <a target="_blank" href="https://www.facebook.com/yallapunk/">
                         <div class="glyph facebook">
                             <i class="fa fa-facebook"></i>
@@ -101,6 +160,7 @@
 
     <!--preload backgrounds-->
     <script src="js/preLoad.js"></script>
+
 </body>
 
 </html>
