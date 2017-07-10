@@ -269,7 +269,7 @@ nav>a {
 #big-logo {
     display: flex;
     justify-content: center;
-    margin-top: 55px;
+    margin-top: 25px;
     flex: 1;
     height: 169.23px;
 }
@@ -294,7 +294,7 @@ nav>a {
 
 #front-text {
     flex: 1;
-    margin-top: 150px;
+    margin-top: 90px;
 }
 
 #front-text>p {
@@ -319,6 +319,29 @@ nav>a {
     font-weight: 538.45;
 }
 
+
+/*DONATE BUTTON*/
+
+#gofundme-button {
+    margin-left: 95.2px;
+    margin-bottom: 2em;
+}
+#gofundme-button>button {
+    font-family: 'Asap', sans-serif;
+    padding: 8px 10px;
+    font-size: 18px;
+    border-radius: 8px;
+    background: rgb(0, 97, 232);
+    color: white;
+    font-weight: 900;
+    cursor: pointer;
+    letter-spacing: 3px;
+    border: 3px solid white;
+}
+#gofundme-button button:hover,
+#gofundme-button button:active {
+    background: #3381ED;
+}
 
 /*SOCIAL*/
 
@@ -433,12 +456,16 @@ nav>a {
 ***********************************/
 
 @media (max-width: 900px) {
+    #gofundme-button {
+        margin-left: 0;
+        text-align: center;
+    }
     #front-text>p {
         margin: 0px;
         text-align: justify;
     }
     #big-logo {
-        margin-bottom: 25px;
+        margin-bottom: 0px;
         margin-top: 40px;
     }
     #big-logo>img {
@@ -454,6 +481,13 @@ nav>a {
 }
 
 @media (max-width: 610px) {
+    #gofundme-button button {
+        padding: 0.4em 0.6em;
+        font-size: 1.8em;
+        border-radius: 0.5em;
+        letter-spacing: 0.1em;
+        border: 3px solid white;
+    }
     #big-logo {
         height: 39.48vw;
         margin-top: 8vw;
@@ -491,6 +525,10 @@ nav>a {
 
 @media (-ms-high-contrast: none),
 (-ms-high-contrast: active) {
+    #gofundme-button {
+        margin-left: 0;
+        text-align: center;
+    }
     #big-logo>#underline {
         position: absolute;
     }

@@ -1,6 +1,6 @@
 // background image paths to be displayed
 var backgrounds = [
-    'images/giant-kitty-bg.jpg',
+    'images/bidet-bg.jpg',
     'images/philly-skyline-bg.jpg',
     'images/philly-street-bg.jpg',
 ];
